@@ -1,0 +1,59 @@
+{
+ "title": "repo-audit-planner: demo shop",
+ "cwd": "@WORK@",
+ "width": 1000,
+ "rows": 30,
+ "wrap": 104,
+ "fontSize": 15,
+ "highlight": [
+  {
+   "re": "^\\s+error",
+   "cls": "red"
+  },
+  {
+   "re": "^\\s+warning",
+   "cls": "yellow"
+  },
+  {
+   "re": "^\\| 1 \\|",
+   "cls": "green"
+  }
+ ],
+ "steps": [
+  {
+   "note": "# a 54-line demo shop. facts first, no opinions"
+  },
+  {
+   "cmd": "python3 repo_facts.py examples/demo-shop",
+   "maxLines": 8,
+   "hold": 1.2
+  },
+  {
+   "note": "# two draft plans land in plans/. 002 is a bad draft I wrote for this demo"
+  },
+  {
+   "cmd": "cp drafts/002-fix-sql-injection-in-orders.md plans/"
+  },
+  {
+   "cmd": "python3 check_plans.py plans --repo .",
+   "expectExit": [
+    1
+   ],
+   "hold": 2.6
+  },
+  {
+   "note": "# 002 invents a SQL injection in a shop with no database. The checker opened the files"
+  },
+  {
+   "cmd": "rm plans/002-*.md && python3 rank_plans.py plans",
+   "hold": 1
+  },
+  {
+   "note": "# one plan survived. Ranked, quoted, checked."
+  },
+  {
+   "pause": 1500
+  }
+ ],
+ "typeSeconds": 0.8
+}

@@ -1,0 +1,29 @@
+Repo facts for examples/demo-shop (5 files listed)
+
+Languages (files, lines):
+  Python           5       54
+
+Tests: 1 test files to 4 source files (ratio 0.25); 18 test lines to 36 source lines
+Debt markers: {'TODO': 1}
+  shop/orders.py:8  TODO
+
+Largest code files (lines):
+      18  tests/test_demo_pricing.py
+      18  shop/pricing.py
+      10  shop/orders.py
+       5  shop/__init__.py
+       3  shop/config.py
+
+Manifests: none
+Lockfiles: none
+CI config: none
+Secret-like lines: 0 (location and kind only, the value is never shown)
+
+Most-changed files in six months (commits):
+     1  shop/__init__.py
+     1  shop/config.py
+     1  shop/orders.py
+     1  shop/pricing.py
+     1  tests/test_demo_pricing.py
+
+Skipped: 0 binary, 0 over 1 MB, 0 unreadable

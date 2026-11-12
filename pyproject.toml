@@ -1,0 +1,18 @@
+# Nothing here is installed: the skill's scripts are single files that run as they are.
+# This file only configures the tests and the linter.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["agensi/repo-audit-planner/scripts", "tools", "tests"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["docs/media-src"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4"]
+
+[tool.ruff.lint.per-file-ignores]
+"tools/**" = ["E501"]
+"tests/**" = ["E501"]
